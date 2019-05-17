@@ -39,4 +39,20 @@ display = () => {
     }
 }
 
-console.log(display());
+// console.log(display());
+
+// .3) Check for Palindromes
+
+is_palindrome = s => {
+    if(s === s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")){
+        return "palindrome"
+    }else{
+        return "not a palindrome"
+    }
+}
+
+// True, true, true, false
+console.log(is_palindrome("dad"));
+console.log(is_palindrome("A man, a plan, a canal: Panama"));
+console.log(is_palindrome("1001"));
+console.log(is_palindrome("Tauhida"));
