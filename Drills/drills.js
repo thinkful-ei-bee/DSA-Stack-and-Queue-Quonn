@@ -94,9 +94,9 @@ parensMatch = (exp) => {
 
 }
 
-console.log(parensMatch("2(x + 3) or 2 * x + 3"))
-console.log(parensMatch("2(x + 3 or 2 * x + 3"))
-console.log(parensMatch("2x + 3) or 2 * x + 3"))
+// console.log(parensMatch("2(x + 3) or 2 * x + 3"))
+// console.log(parensMatch("2(x + 3 or 2 * x + 3"))
+// console.log(parensMatch("2x + 3) or 2 * x + 3"))
 
 //. Sort Stack
 
@@ -170,8 +170,37 @@ doubleQueue = () => {
     return DLLQ
 }
 
-console.log(doubleQueue())
+// console.log(doubleQueue())
 
 
-// .8) Queue implementation using a stack
+// .8) Queue implementation using 2 stacks
+
+let stack1 = new Stack();
+let stack2 = new Stack();
+
+twoStacksQ = () => {
+
+    // simultes enqueue(item)
+    stack1.push("a");
+    stack1.push("b");
+    stack1.push("c");
+    stack1.push("d");
+
+    let temp = stack1.pop();
+
+    stack2.push(temp)
+
+    // dequeue
+if(stack2.top !== null){
+    while(stack1.top !== null){
+        stack2.push(stack1.pop())
+    }
+}
+//return stack2.pop()
+    
+    return stack2
+}
+
+console.log(JSON.stringify(twoStacksQ()));
+
 
